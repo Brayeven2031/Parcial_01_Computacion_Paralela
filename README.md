@@ -72,7 +72,7 @@ A continuación, encontrará el repositorio del código en el lenguaje de progra
 ## *lanzador.pl*
 > El archivo lanzador se encarga de automatizar el procedimiento de ejecución, es decir, que se encargará de ejecutar directamente sobre el sistema los 4 Benchmarks, con diferentes tamaños de matrices y un numero $n$ determinado de repeticiones. Para este caso, se inicia con la definición de los ejecutables obtenidos luego de la ejcución del Makefile. Posteriormente, se asignan los tamaños de matrices, los cuales para este caso son doce que rondan desde los 280 hasta 4427 unidades. Por último, se definen las repeticiones y el path de ubicación donde se encuentran los ejecutables.
 > Mediante un ciclo foreach se recorrer cada ejecutable, dentro de este ciclo se establece un nuevo ciclo foreach que recorre cada tamaño de matriz y dentro de este último se inicia un ciclo for que recorre el número de repeticiones previamente definido. De este modo, cada programa se ejecutará por cada tamaño el número definido de repeticiones que para este caso fue 30.  
-> NOTA 1: Por favor tener en cuenta que para ejecutar el lanzador se debe validar que el archivo cuente con permisos de ejecución, en caso tal que no, ejecutar el siguiente comando: $chmod\ +x\ lanzador.pl$
+> NOTA 1: Por favor tener en cuenta que para ejecutar el lanzador se debe validar que el archivo cuente con permisos de ejecución, en caso tal que no, ejecutar el siguiente comando: $chmod\ +x\ lanzador.pl$ \
 > NOTA 2: Por favor tener en cuenta que para ejecutar el lanzador se debe haber ejecutado el Makefile previamente (A continuación, se explicará como ejecutar el archivo)
 
 
