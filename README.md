@@ -72,10 +72,17 @@ A continuación, encontrará el repositorio del código en el lenguaje de progra
 ## *lanzador.pl*
 > El archivo lanzador se encarga de automatizar el procedimiento de ejecución, es decir, que se encargará de ejecutar directamente sobre el sistema los 4 Benchmarks, con diferentes tamaños de matrices y un numero $n$ determinado de repeticiones. Para este caso, se inicia con la definición de los ejecutables obtenidos luego de la ejcución del Makefile. Posteriormente, se asignan los tamaños de matrices, los cuales para este caso son doce que rondan desde los 280 hasta 4427 unidades. Por último, se definen las repeticiones y el path de ubicación donde se encuentran los ejecutables.
 > Mediante un ciclo foreach se recorrer cada ejecutable, dentro de este ciclo se establece un nuevo ciclo foreach que recorre cada tamaño de matriz y dentro de este último se inicia un ciclo for que recorre el número de repeticiones previamente definido. De este modo, cada programa se ejecutará por cada tamaño el número definido de repeticiones que para este caso fue 30.  
-> NOTA 1: Por favor tener en cuenta que para ejecutar el lanzador se debe validar que el archivo cuente con permisos de ejecución, en caso tal que no, ejecutar el siguiente comando: $chmod +x lanzador.pl$
+> NOTA 1: Por favor tener en cuenta que para ejecutar el lanzador se debe validar que el archivo cuente con permisos de ejecución, en caso tal que no, ejecutar el siguiente comando: $chmod\ +x\ lanzador.pl$
 > NOTA 2: Por favor tener en cuenta que para ejecutar el lanzador se debe haber ejecutado el Makefile previamente (A continuación, se explicará como ejecutar el archivo)
 
 
-# *Ejecución*
+# **Ejecución**
 ## *Procedimiento*
-> 
+> 1. Inicialmente descargue el archivo .zip y descomprímalo en una carpeta de su preferencia
+> 2. Ejecutar el comando: $make\ clean$
+> 3. Ejecutar el comando: $make\ all$
+> 4. Entrar al archivo lanzandor.pl y cambiar dentro de la variable @Path, la dirección exacta donde se encuentran los archivos previamente compilados
+> 5. Crear dentro de la dirección de los programas una carpeta con el nombre exacto "Soluciones", ya que en este se guardarán los resultados de las ejecuciones
+> 6. Ejecutar el comando: ./lanzador.pl
+> **NOTA:** Se recomienda validar los tamaños de las matrices ya que de estos depende el tiempo total empleado para toda la ejecución, por ejemplo para el presente caso se establece un tiempo total promedio de más de 40 horas.
+
