@@ -32,3 +32,20 @@ A continuación, encontrará el repositorio del código en el lenguaje de progra
 > 
 > Las matrices se inicializan mediante la función inicializacion_mm_double_rnd(), de la interfaz artesanal "mm_lib.h" . Inmediatamente después, se invoca el método punto_prueba_inicial() para iniciar la toma del tiempo, guardando el tiempo exacto en el que se hace el llamado de la función, se realiza la multiplicación clásica (mediante el método multiplicacion_mm_double()), que se explicará más adelante, y tan pronto finalice la multiplicación se tomara el tiempo de cierre con el llamado del método punto_prueba_final() que calcula el tiempo empleado en la operación y lo imprime por pantalla.
 
+
+# Interfaz
+### *mm_lib.c* 
+> En el archivo actual se encuentran las implementaciones de los métodos y funciones declaradas en la biblioteca artesanal "mm_lib.h". A continuación, encontrará una breve introducción de la funcionalidad de los métodos: 
+> 
+> - **punto_prueba_inicial() - punto_prueba_final():** 
+> > Los métodos se encargan de proporcionar el tiempo de ejecución de un proceso en particular para este caso la multiplicación entre matrices. Para ello, el primer método inicia guarda dentro de la estructura *inicio_cuenta* el tiempo exacto en el que fue invocada la función. Por otro lado, el segundo método también se encargará de guardar el tiempo exacto en el que se realizó el llamado al método, pero esta vez dentro de la estructura *fin_cuenta*, para que posteriormente se calcule la diferencia entre los dos tiempos y lo imprima en pantalla en equivalente a segundos de ejecución.
+
+> - **inicializacion_mm_int() - inicializacion_mm_double()**
+> > Las funciones anteriores se encargan de recibir los apuntadores de las tres matrices e inicializarlas según el bechmark que lo invoque, es decir el bechmark de ENTEROS definidos invocará el método inicializacion_mm_int(), para iniciar cada valor de la matriz mediante operaciones ya definidas con la certeza de guardar en el espacio de memoria solo valores enteros. Por otro lado, el bechmark de FLOTANTES definidos invocará el método inicializacion_mm_double(), para iniciar cada valor de la matriz mediante operaciones ya definidas con la certeza de guardar en el espacio de memoria solo valores de tipo flotante.
+
+> - **random_int() - random_double() - inicializacion_mm_int_rnd() - inicializacion_mm_double_rnd()**
+> > Las funciones anteriores se encargan de recibir los apuntadores de las tres matrices e inicializarlas según el bechmark que lo invoque, es decir el bechmark de ENTEROS ALEATORIOS invocará el método inicializacion_mm_int_rnd(), para iniciar cada valor de la matriz mediante llamados a la función random_int() con la certeza de guardar en el espacio de memoria valores enteros aleatorios entre 0 y 9. Por otro lado, el bechmark de FLOTANTES ALEATORIOS invocará el método inicializacion_mm_double_rnd(), para iniciar cada valor de la matriz mediante llamados a la función random_double() con la certeza de guardar en el espacio de memoria valores flotantes aleatorios entre 0.0 y 9.9.
+
+> - **multiplicacion_mm_int() - multiplicacion_mm_double()**
+> > Las funciones se encargan de realizar el procedimiento de multiplicación clásico entre dos matrices, cabe resaltar que estás son llamadas según el bechmark que lo invoque, es decir, que los Bechmark de tipo entero llamarán la función multiplicacion_mm_int() y las de tipo flotante la función multiplicacion_mm_double(). 
+> > Para agilizar el proceso de multiplicación, en ambos métodos se hace uso "Punteros auxiliares", de este modo la matriz tomará el valor directamente para operarlo y ahorra tiempo de ejecución en llamados a la memoria e instrucciones innecesarias.
