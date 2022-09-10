@@ -3,3 +3,32 @@ La administración óptima de los recursos de un computador es indispensable, si
 
 A continuación, encontrará el repositorio del código en el lenguaje de programación C, correspondiente a la solución y planteamiento de 4 Bechmarks diseñados para la toma de rendimientos al realizar la clásica multiplicación entre matrices. Para ello se utilizó la metodología de compilación por separado, por tal motivo la solución se encuentra divida en varios archivos mm_main.c, mm_main_rnd.c, mm_main_double.c y mm_main_double_rnd.c (Archivos que contiene el método principal para generar el arranque del programa para cada uno de los benchmarks, adicional a esto, los archivos contienen métodos prácticos para aumentar el rendimiento de la ejecución y la reserva de memoria), taller_lib.c (Archivo que es la interfaz de los métodos a los que el programa hace llamados y que se encargan de aportar a la solución solicitada para las tomas de rendimiento y los procedimientos de preparación y multiplicación de matrices) y por último, el archivo taller_lib.h (Archivo que es la biblioteca artesanal creada con el fin de generar el listado de funciones y métodos que permitirán el correcto desempeño del programa). Adicional a esto se incluyen dos archivos, uno nombrado Makefile que se encargará de automatizar el proceso de compilación de los archivos .c generando los ejecutables para cada Bechmark y finalmente el lanzador.pl (archivo de perl encargado de automatizar la toma de tiempo ejecutando de manera automática un total de 30 repeticiones por tamaño definido con los cuatro ejecutables).
 
+# Archivos principales
+## *mm_main.c* 
+> El presente archivo resguarda la función principal del primer bechmark **(ENTERO con números definidos)**. 
+> 
+> Para esto inicialmente se captura el valor de la matriz que es ingresado por consola en el momento de la ejecución como un parámetro de entrada, dicho valor se guarda dentro de la variable $N$. Posteriormente se declaran las matrices como apuntadores de memoria a la reserva un espacio prudencial guardado en la variable $MEM_CHUNK$ esta memoria se repartirá para las matrices permitiendo la multiplicación con matrices más grandes, es decir que superen las 835 unidades. 
+>
+> Las matrices se inicializan mediante la función inicializacion_mm_int(), de la interfaz artesanal "mm_lib.h" . Inmediatamente después, se invoca el método punto_prueba_inicial() para iniciar la toma del tiempo, guardando el tiempo exacto en el que se hace el llamado de la función, se realiza la multiplicación clásica (mediante el método multiplicacion_mm_int()), que se explicará más adelante, y tan pronto finalice la multiplicación se tomara el tiempo de cierre con el llamado del método punto_prueba_final() que calcula el tiempo empleado en la operación y lo imprime por pantalla.
+
+## *mm_main_rnd.c* 
+> El presente archivo resguarda la función principal del segundo bechmark **(ENTERO con números ALEATÓRIOS)**. 
+> 
+> Para esto inicialmente se captura el valor de la matriz que es ingresado por consola en el momento de la ejecución como un parámetro de entrada, dicho valor se guarda dentro de la variable $N$. Posteriormente se declaran las matrices como apuntadores de memoria a la reserva un espacio prudencial guardado en la variable $MEM_CHUNK$ esta memoria se repartirá para las matrices permitiendo la multiplicación con matrices más grandes, es decir que superen las 835 unidades. 
+>
+> Las matrices se inicializan mediante la función inicializacion_mm_int_rnd(), de la interfaz artesanal "mm_lib.h" . Inmediatamente después, se invoca el método punto_prueba_inicial() para iniciar la toma del tiempo, guardando el tiempo exacto en el que se hace el llamado de la función, se realiza la multiplicación clásica (mediante el método multiplicacion_mm_int()), que se explicará más adelante, y tan pronto finalice la multiplicación se tomara el tiempo de cierre con el llamado del método punto_prueba_final() que calcula el tiempo empleado en la operación y lo imprime por pantalla.
+
+## *mm_main_double.c* 
+> El presente archivo resguarda la función principal del tercer bechmark **(FLOTANTE con números definidos)**. 
+> 
+> Para esto inicialmente se captura el valor de la matriz que es ingresado por consola en el momento de la ejecución como un parámetro de entrada, dicho valor se guarda dentro de la variable $N$. Posteriormente se declaran las matrices, en este caso de tipo double, como apuntadores de memoria a la reserva un espacio prudencial guardado en la variable $MEM_CHUNK$ esta memoria se repartirá para las matrices permitiendo la multiplicación con matrices más grandes, es decir que superen las 835 unidades. 
+>
+> Las matrices se inicializan mediante la función inicializacion_mm_double(), de la interfaz artesanal "mm_lib.h" . Inmediatamente después, se invoca el método punto_prueba_inicial() para iniciar la toma del tiempo, guardando el tiempo exacto en el que se hace el llamado de la función, se realiza la multiplicación clásica (mediante el método multiplicacion_mm_double()), que se explicará más adelante, y tan pronto finalice la multiplicación se tomara el tiempo de cierre con el llamado del método punto_prueba_final() que calcula el tiempo empleado en la operación y lo imprime por pantalla.
+
+## *mm_main_double_rnd.c* 
+> El presente archivo resguarda la función principal del segundo bechmark **(FLOTANTE con números ALEATÓRIOS)**. 
+> 
+> Para esto inicialmente se captura el valor de la matriz que es ingresado por consola en el momento de la ejecución como un parámetro de entrada, dicho valor se guarda dentro de la variable $N$. Posteriormente se declaran las matrices, en este caso de tipo double, como apuntadores de memoria a la reserva un espacio prudencial guardado en la variable $MEM_CHUNK$ esta memoria se repartirá para las matrices permitiendo la multiplicación con matrices más grandes, es decir que superen las 835 unidades. 
+> 
+> Las matrices se inicializan mediante la función inicializacion_mm_double_rnd(), de la interfaz artesanal "mm_lib.h" . Inmediatamente después, se invoca el método punto_prueba_inicial() para iniciar la toma del tiempo, guardando el tiempo exacto en el que se hace el llamado de la función, se realiza la multiplicación clásica (mediante el método multiplicacion_mm_double()), que se explicará más adelante, y tan pronto finalice la multiplicación se tomara el tiempo de cierre con el llamado del método punto_prueba_final() que calcula el tiempo empleado en la operación y lo imprime por pantalla.
+
