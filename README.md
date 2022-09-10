@@ -57,6 +57,14 @@ A continuación, encontrará el repositorio del código en el lenguaje de progra
 ## *mm_lib.h*
 > El archivo actual es la biblioteca artesanal de los métodos y funciones creadas manualmente, para ser implementadas por las clases principales y la interfaz. En este únicamente se definen los tipos de función, los nombres de estas y los parámetros que recibirán, estos métodos cumplen objetivos puntuales dentro del desarrollo y correcta ejecución de los Bechmarks y fueron explicados anteriormente.
 
+
 # **Compilación y lanzamiento automático**
 ## *Makefile*
-
+> Con el archivo de tipo Makefile, se automatizará el procedimiento de compilación por separado, es decir, debido a que toda la codificación no se encuentra en un único archivo, esto por métodos correctos de programación, que también se ven reflejados en el rendimiento y peso del programa; se requiere que el código se ejecute por partes, por ejemplo, para un único programa se requiere ejecutar el principal del proyecto, luego la interfaz y por último la unión de ambos objetos. Ahora bien, para el caso del presente programa en el que contamos con 4 clases principales, el proceso se tornaría un poco tedioso y extenso, por tanto, se convierte en una necesidad tener el presente archivo. 
+> El programa se divide en dos partes, la sección de declaraciones de variable globales y la sección de métodos. Dentro de la primera se encuentran los comandos y banderas necesarias para la correcta compilación y el vector de los métodos de compilación (métodos destinados para la compilación de cada Bechmark). Por último, en la sección de métodos se encontrarán los siguientes: 
+> - all: Método que ejecuta todos los métodos de compilación menos el de limpieza
+> - mm_main: Compilación Benchmark ENTERO
+> - mm_main_rnd: Compilación Benchmark ENTERO ALEATORIO
+> - mm_main_double: Compilación Benchmark DOUBLE
+> - mm_main_double_rnd: Compilación Benchmark DOUBLE ALEATORIO
+> - clean: Elimina todos los ejecutables generados y los archivos de tipo .o
