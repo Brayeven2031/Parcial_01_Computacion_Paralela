@@ -81,8 +81,8 @@ A continuación, encontrará el repositorio del código en el lenguaje de progra
 > 1. Inicialmente descargue el archivo .zip y descomprímalo en una carpeta de su preferencia
 > 2. Ejecutar el comando: $make\ clean$
 > 3. Ejecutar el comando: $make\ all$
-> 4. Entrar al archivo lanzandor.pl y cambiar dentro de la variable @Path, la dirección exacta donde se encuentran los archivos previamente compilados
-> 5. Crear dentro de la dirección de los programas una carpeta con el nombre exacto "Soluciones", ya que en este se guardarán los resultados de las ejecuciones
-> 6. Ejecutar el comando: ./lanzador.pl
-> **NOTA:** Se recomienda validar los tamaños de las matrices ya que de estos depende el tiempo total empleado para toda la ejecución, por ejemplo para el presente caso se establece un tiempo total promedio de más de 40 horas.
+> 4. Entrar al archivo lanzandor.pl y cambiar dentro de la variable $@Path$, la dirección exacta donde se encuentran los archivos previamente compilados
+> 5. Crear dentro de la dirección de los programas una carpeta con el nombre exacto $"Soluciones"$, ya que en este se guardarán los resultados de las ejecuciones
+> 6. Ejecutar el comando: $./lanzador.pl$ \
+> **NOTA:** Se recomienda validar los tamaños de las matrices ya que de estos depende el tiempo total empleado para toda la ejecución, por ejemplo para el presente caso se establece un tiempo total promedio de más de **40 horas**.
 
